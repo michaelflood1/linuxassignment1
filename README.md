@@ -22,7 +22,7 @@
 
 
 
-### <center> Creating SSH keys on your ***local*** machine.</center>
+### <center> Creating SSH keys on your local machine.</center>
 ---
 > {!NOTE}
 > SSH keys are an authentication tool that acts as a special password, mainly used for connecting to a remote computer.
