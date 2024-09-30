@@ -7,7 +7,7 @@
 
 ### Creating SSH keys on your ***local*** machine.
 ---
-:memo: **Note** SSH keys are an authentication tool that acts as a special password, mainly used for connecting to a remote computer.
+:memo: **_NOTE_** SSH keys are an authentication tool that acts as a special password, mainly used for connecting to a remote computer.
 
 ---
 
@@ -16,7 +16,7 @@
 
 2. Open up your windows terminal and input the below text, changing **~/.ssh/do-key** to your .ssh folders path. and **youremail** to your preferred email account.
 
-    * :memo: **note** if you are on windows you  will need to use your full path. i.e  
+    * :memo: **Warning** if you are on windows you  will need to use your full path. i.e  
      C:\Users\your-user-name\.ssh\do-key
 
 ``` 
@@ -32,6 +32,7 @@
 <br>
 
 5. Click the security tab at the top of your page
+
 ![ security image](/assets/security.png)
 
 6. click add SSH key and paste the contents of you do-key.pub into the first box, and make an easy to remember name for the second box.
