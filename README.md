@@ -235,6 +235,7 @@ Get-Content C:\Users\your-user-name\.ssh\do-key.pub | Set-Clipboard
 <br>
 
 2. There are many things you can do with cloud-init-config files we will be going simple.
+   
 ```yaml 
 # cloud-config
 # Create a user ID
