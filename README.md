@@ -104,8 +104,12 @@
       use the one we uploaded earlier.
     * Change your hostname to something easy to type, the project you are working on is a good choice.
     >[!IMPORTANT]
-    > If you are planning to add a cloud init Config to this droplet please make sure you follow the steps to create one at the end of this segment.
-    
+    > If you are planning to add a cloud init Config to this droplet please complete section 4: Creating and Using a Cloud Init File first
+
+    * Under Advanced options click the ***Add Initialization scripts*** button and paste your yaml here.
+
+    <img src="assets/initscript.png" alt="advanced options" height="250" width="350">
+
     > [!NOTE]
     > You can leave the rest of the settings on defaultS
 4. Click Create Droplet. You should see the Droplet you just made now.
@@ -116,4 +120,28 @@
 >[!NOTE]
 > Cloud Init is pre-installed in the Arch Linux Cloudimg images. With the help of a config file users are able to make changes to their initial server. installing specific packages or adding users etcetc.
 --- 
-1. 
+1.  Using an text editor or app create a file.
+    * the text we put into this file will be the instructions that our Droplet initializes with.
+2. There are many things you can do with cloud-init-config files we will be going simple.
+``` 
+#cloud-config
+// Create a user ID
+users:
+    - name: YourName
+    groups: sudo
+    shell: /bin/bash  //default shell
+    ssh-authorized-keys: 
+        - ssh-ed25519 // enter your do-key.pub files contents
+    sudo: 
+        ["ALL=(ALL) NOPASSWD:ALL"] // allows useage of sudo command without needing a password
+    packages: // install whatever packages you may want.
+    - git
+    - neovim
+```
+3. adding this data minus the // lines into the add initialization scripts option during droplet creation will make the droplet launch with.
+    * Neo Vim and Git installed
+    * a user with:<br>
+        * a preset ssh key
+        * a chosen name by the user
+        * sudo privelages
+
