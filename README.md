@@ -6,12 +6,18 @@
 #### <center> By Michael Flood</center>
 
 
-## Table of Contents
+## <center>Table of Contents
 
 1. [Creating SSH keys on your local machine](#creating-ssh-keys-on-your-local-machine)
 2. [Download and upload your Operating System Image](#download-and-upload-your-operating-system-image)
 3. [Creating your first Droplet](#creating-your-first-droplet)
-4. [Creating and Using a Cloud Init File](#creating-and-using-a-cloud-init-file)
+4. [Creating and Using a Cloud Init File](#creating-and-using-a-cloud-init-file) 
+</center>
+
+
+
+
+
 ### Creating SSH keys on your ***local*** machine.
 ---
 > {!NOTE}
@@ -19,20 +25,26 @@
 
 ---
 
+
 1. create a new folder named .ssh in a directory of your choosing.
 ![ if theres no image here fail me](/assets/sshfolder.png)
 
+
 2. Open up your windows terminal and input the below text, changing **~/.ssh/do-key** to your .ssh folders path. and **youremail** to your preferred email account.
+
 
      > [!IMPORTANT]
     > if you are on windows you  will need to use your full path. i.e  
     > C:\Users\your-user-name\.ssh\do-key
 
+
 ```bash
     ssh-keygen -t ed25519 -f ~/.ssh/do-key -C <youremail@email.com>
 ```
+
 3. You will be given the choice of either having a password or not.
     * typing ** Enter ** twice  will result in you having no password for your SSH key.
+
 
     * whatever you enter into the field will  become your password going forward.
 4. visit DigitalOcean and navigate to the **settings** menu which is located in the lefthand side of your screen.
@@ -40,23 +52,34 @@
 <br>
 <br>
 
+
 5. Click the security tab at the top of your page
+
 
 ![ security image](/assets/security.png)
 
+
 6. click add SSH key and paste the contents of you do-key.pub into the first box, and make an easy to remember name for the second box.
+
 
     > [!TIP]
      > make the name simple, it is used later.
 
-### download and upload your Operating System Image
+
+### <center> download and upload your Operating System Image <center>
 ---
+
+
 > [!NOTE]
 >in order to have a functional enviorenmnet to work with we need to choose and upload an image of whatever OS we want to play with. I will be demonstrating with Arch Linux.
 
 ---
+
+
 1. navigate to the following link.
     * <a href="https://gitlab.archlinux.org/archlinux/arch-boxes/-/packages" target="_blank" rel="noopener noreferrer">Arch Linux gitlab Repo</a>
+
+
 2. Open the most **recently** published images link.
 
 3. We want to download the cloudimg qcow2 link.
@@ -76,7 +99,7 @@
     * select the Data Center closest to you in my case it will be *San Francisco 3*
     * you should see that your upload is in progress or **Pending** This will resolve shortly.
 :
-### Creating your first droplet
+### <center> Creating your first droplet <center>
 
 ---
 > [!NOTE]
@@ -122,17 +145,19 @@
 4. Click Create Droplet. You should see the Droplet you just made now.
 <img src="assets/Createddroplet.png" alt="Proof of creation" height="250" width="700">
 
-### Creating and Using a Cloud Init FIle
+### <center> Creating and Using a Cloud Init FIle <center>
 ---
 >[!NOTE]
 > Cloud Init is pre-installed in the Arch Linux Cloudimg images. With the help of a config file users are able to make changes to their initial server. installing specific packages or adding users etcetc.
 --- 
 1.  Using an text editor or app create a file.
     * the text we put into this file will be the instructions that our Droplet initializes with.
+
+    ---
 2. There are many things you can do with cloud-init-config files we will be going simple.
 ```yaml 
-#cloud-config
-// Create a user ID
+# cloud-config
+# Create a user ID
 users:
     - name: YourName
     groups: sudo
