@@ -38,7 +38,7 @@
 
     * :memo: **note** make the name simple, it is used later.
 
-### Add your custom Operating System Image
+### download and upload your Operating System Image
 ---
 :memo: **Note** in order to have a functional enviorenmnet to work with we need to choose and upload an image of whatever OS we want to play with. I will be demonstrating with Arch Linux.
 
@@ -49,12 +49,26 @@
 
 3. We want to download the cloudimg qcow2 link.
 ![cloudimg qcow2 arch image](/assets/archlinuximage.png)
+    * :memo: **Note** we choose the cloudimg qcow2 due to the fact that we get cloud compatibility(cloudimg), it is easy to create backups for qcow2 images, and because qcow2 is optimised for reading and writing speeds.
 
+4. Go to Digital Ocean and click on the ***Manage*** button on the left hand side, a drop down will appear and you will select ***Backups & Snapshots***
+    * <img src="assets/BackupsSnapshots.png" alt="i must have made a whoopsy" height="350" width="200">
+
+5. Click ***Custom Images***
+    * Click the Blue ***Upload Image*** Button
+    * Select the Arch Linux Cloudimg qcow2 we downloaded previously
+     <img src="assets/Snapshotsupload.png" alt="i must have made a whoopsy" height="200" width="900">
+6. Image Options
+    * Choose the Arch Linux Distribution
+    * select the Data Center closest to you in my case it will be *San Francisco 3*
+    * you should see that your upload is in progress or **Pending** This will resolve shortly.
+:
 ### Creating your first droplet
 
 ---
-:memo: **Note** Droplets are similar to running a virtual machine on your computer with the exception that we deploy the Virtual Machine (Droplet) through DigitalOceans cloud servers negating the need for our own hardware to do any work. The Trade off is that we spend monthly amounts for our active droplets.
-
+:memo: **Note** Droplets are similar to running a virtual machine on your computer with the exception that we deploy the Virtual Machine (Droplet) through DigitalOceans cloud servers negating the need for our own hardware to do any work. The Trade off is that we spend monthly amounts for our active droplets. You may have also heard them called Virtual Private Servers
+[!IMPORTANT]
+You pay for all services while using Digital Ocean.
 ---
 
 1. 
