@@ -339,14 +339,15 @@ ssh -i .ssh/do-key arch@your-droplets-ip-address
 
 
 #### <center> References </center>
-- cloudbees. -yaml - https://www.cloudbees.com/blog/yaml-tutorial-everything-you-need-get-started
+- [CloudBees - YAML Tutorial: Everything You Need to Get Started](https://www.cloudbees.com/blog/yaml-tutorial-everything-you-need-get-started)
 
-- Cyberpanel.  - droplets - https://cyberpanel.net/blog/digitalocean-droplets
+- [CyberPanel - DigitalOcean Droplets](https://cyberpanel.net/blog/digitalocean-droplets)
 
-- DigitalOcean. - ssh keys - https://docs.digitalocean.com/products/droplets/how-to/add-ssh-keys/
+- [DigitalOcean - How to Add SSH Keys](https://docs.digitalocean.com/products/droplets/how-to/add-ssh-keys/)
 
-- DigitalOcean.  - custom images - https://docs.digitalocean.com/products/custom-images/
+- [DigitalOcean - Custom Images](https://docs.digitalocean.com/products/custom-images/)
 
-- DigitalOcean. - cloud init -  https://docs.digitalocean.com/glossary/cloud-init/
+- [DigitalOcean - Cloud Init](https://docs.digitalocean.com/glossary/cloud-init/)
+
 
 - Proffessor Nathan McNinch ( I dont wanna link your notes here because i don't know if that gets tagged as privacy violation. but i went through all the notes to get some of my info)
