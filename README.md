@@ -154,10 +154,11 @@
 ---
 > [!NOTE]
 > Droplets are similar to running a virtual machine on your computer with the exception that we deploy the Virtual Machine (Droplet) through DigitalOceans cloud servers negating the need for our own hardware to do any work. The Trade off is that we spend monthly amounts for our active droplets. You may have also heard them called Virtual Private Servers
+---
 
 <br>
 <br>
-
+---
 
 > [!IMPORTANT]
 > You pay for all services while using Digital Ocean.
