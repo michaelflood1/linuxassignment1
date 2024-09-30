@@ -39,7 +39,6 @@
 
 2. Open up your windows terminal and input the below text, changing **~/.ssh/do-key** to your .ssh folders path. and **your email** to your preferred email account.
 <br>
-<br>
 
      > [!IMPORTANT]
     > if you are on windows you will need to use your full path. i.e.  
@@ -56,11 +55,12 @@
 3. You will be given the choice of either having a password or not.
     * typing **Enter** twice will result in you having no password for your SSH key.
 
-<br>
-<br>
 
     * Whatever you enter into the field will become your password going forward.
+
 4. visit Digital Ocean and navigate to the **settings** menu which is located in the lefthand side of your screen.
+
+<br>
 
 <center> <img src="assets/Settings.png" alt="i must have made a whoopsie" height="300" width="300"> </center>
 
@@ -86,16 +86,14 @@ Get-Content C:\Users\your-user-name\.ssh\do-key.pub | Set-Clipboard
 ```
 
 <br>
-<br>
 
     > [!TIP]
      > make the name simple, it is used later.
 
 <br>
-<br>
+
 
 ### <center> download and upload your Operating System Image <center>
-<br>
 <br>
 
 ---
@@ -106,40 +104,37 @@ Get-Content C:\Users\your-user-name\.ssh\do-key.pub | Set-Clipboard
 
 ---
 <br>
-<br>
 
 1. navigate to the following link.
 
     * <a href="https://gitlab.archlinux.org/archlinux/arch-boxes/-/packages" target="_blank" rel="noopener noreferrer">Arch Linux gitlab Repo</a>
     <br>
-<br>
 
 
 2. Open the most **recently** published images link.
 <br>
-<br>
 
 3. We want to download the cloudimg qcow2 link.
-<br>
 <br>
 
 <center> <img src="assets/archlinuximage.png"> </center>
 
 <br>
-<br>
 
     * > [!NOTE]
     > we choose the cloudimg qcow2 due to the fact  that we get cloud compatibility(cloudimg), it is easy to create backups for qcow2 images, and because qcow2 is optimised for reading and writing speeds.
+<br>
 
 4. Go to Digital Ocean and click on the ***Manage*** button on the left-hand side, a drop down will appear, and you will select ***Backups & Snapshots***
 <br>
-<br>
     * <center> <img src="assets/BackupsSnapshots.png" alt="i must have made a whoopsie" height="350" width="200"> </center>
+
+<br>
 
 5. Click ***Custom Images***
     * Click the Blue ***Upload Image*** Button
     * Select the Arch Linux Cloudimg qcow2 we downloaded previously
-
+<br>
     <center> <img src="assets/Snapshotsupload.png" alt="i must have made a whoopsie" height="200" width="900"> </center>
 
      <br>
@@ -150,10 +145,8 @@ Get-Content C:\Users\your-user-name\.ssh\do-key.pub | Set-Clipboard
     * Select the Data Center closest to you in my case it will be *San Francisco 3*
     * You should see that your upload is in progress or **Pending** This will resolve shortly.
 <br>
-<br>
 
 ### <center> Creating your first droplet <center>
-<br>
 <br>
 
 ---
@@ -185,16 +178,13 @@ Get-Content C:\Users\your-user-name\.ssh\do-key.pub | Set-Clipboard
     * Choose Region: <br>
      closest to you for optimal performance. 
      <br>
-     <br>
     * Choose an Image : <br>
     Custom images
         * Choose the Arch Linux Image we uploaded earlier
         <br>
-        <br>
 
     * Choose Size:  <br>
     Base your Droplet Type off of your needs, in my case i will be running a low resource Droplet so i pick the ***Basic Plan + Regular SSD + $7/Month***
-    <br>
     <br>
 
     * Authentication Method :<br>
@@ -202,7 +192,6 @@ Get-Content C:\Users\your-user-name\.ssh\do-key.pub | Set-Clipboard
       use the one we uploaded earlier.
 
     * Change your hostname to something easy to type, the project you are working on is a good choice.
-    <br>
     <br>
 
     >[!IMPORTANT]
@@ -218,7 +207,6 @@ Get-Content C:\Users\your-user-name\.ssh\do-key.pub | Set-Clipboard
     > [!NOTE]
     > You can leave the rest of the settings on Defaults.
 
-<br>
 <br>
 
 4. Click Create Droplet. You should see the Droplet you just made now.
@@ -287,7 +275,7 @@ users:
 
 ```bash
 ssh -i .ssh/do-key arch@your-droplets-ip-address
-# arch is your username so it may change
+# arch is your username so it change it based on your yaml
 # get your droplet ip from the digital ocean droplet page
 ```
 
@@ -324,19 +312,6 @@ ssh -i .ssh/do-key arch@your-droplets-ip-address
 <br>
 
 ---
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 #### <center> References </center>
 - [CloudBees - YAML Tutorial: Everything You Need to Get Started](https://www.cloudbees.com/blog/yaml-tutorial-everything-you-need-get-started)
