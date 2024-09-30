@@ -6,7 +6,7 @@
 #### <center> By Michael Flood</center>
 
 ## <center>Table of Contents</center>
-
+<!-- - i did not realize my links wouldnt work on pages due to centered headers. it worked fine on vscode when i was building this :( sad -->
 1. [Creating SSH keys on your local machine](#creating-ssh-keys-on-your-local-machine)
 
 2. [Download and upload your Operating System Image](#download-and-upload-your-operating-system-image)
