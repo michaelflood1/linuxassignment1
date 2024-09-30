@@ -54,7 +54,7 @@
 <br>
 
 3. You will be given the choice of either having a password or not.
-    * typing ** Enter ** twice will result in you having no password for your SSH key.
+    * typing **Enter** twice will result in you having no password for your SSH key.
 
 <br>
 <br>
