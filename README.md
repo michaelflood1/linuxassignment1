@@ -7,7 +7,7 @@
 
 ### Creating SSH keys on your ***local*** machine.
 ---
-:memo: **_NOTE_** SSH keys are an authentication tool that acts as a special password, mainly used for connecting to a remote computer.
+:memo: **Note** SSH keys are an authentication tool that acts as a special password, mainly used for connecting to a remote computer.
 
 ---
 
