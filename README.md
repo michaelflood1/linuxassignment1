@@ -5,7 +5,7 @@
 # <center> Creating and using Arch Linux Droplets. </center>
 #### <center> By Michael Flood</center>
 
-## <center>Table of Contents
+## <center>Table of Contents</center>
 
 1. [Creating SSH keys on your local machine](#creating-ssh-keys-on-your-local-machine)
 
@@ -20,7 +20,7 @@
 6. [References](#references)
 
 
-</center>
+
 
 ### <center> Creating SSH keys on your ***local*** machine.</center>
 ---
@@ -71,7 +71,7 @@
 <br>
 <br>
 <center>
-![ security image](/assets/security.png) </center>
+<img src="assets/security.png"> </center>
 
 <br>
 <br>
@@ -123,7 +123,7 @@ Get-Content C:\Users\your-user-name\.ssh\do-key.pub | Set-Clipboard
 <br>
 <br>
 
-<center> ![cloudimg qcow2 arch image](/assets/archlinuximage.png) </center>
+<center> <img src="assets/archlinuximage.png"> </center>
 
 <br>
 <br>
