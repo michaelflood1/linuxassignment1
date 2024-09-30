@@ -7,13 +7,19 @@
 
 ## <center>Table of Contents
 
-1. [Creating SSH keys on your local machine] (#creating-ssh-keys-on-your-local-machine)
+1. [Creating SSH keys on your local machine](#creating-ssh-keys-on-your-local-machine)
 
 2. [Download and upload your Operating System Image](#download-and-upload-your-operating-system-image)
 
 3. [Creating your first Droplet](#creating-your-first-droplet)
 
 4. [Creating and Using a Cloud Init File](#creating-and-using-a-cloud-init-file) 
+
+5. [Logging into your Droplet](#logging-into-your-droplet)
+
+6. [References](#references)
+
+
 </center>
 
 ### <center> Creating SSH keys on your ***local*** machine.</center>
@@ -56,7 +62,7 @@
     * Whatever you enter into the field will become your password going forward.
 4. visit Digital Ocean and navigate to the **settings** menu which is located in the lefthand side of your screen.
 
-<img src="assets/Settings.png" alt="i must have made a whoopsie" height="300" width="300">
+<center> <img src="assets/Settings.png" alt="i must have made a whoopsie" height="300" width="300"> </center>
 
 <br>
 <br>
@@ -64,12 +70,20 @@
 5. Click the security tab at the top of your page
 <br>
 <br>
+<center>
+![ security image](/assets/security.png) </center>
 
-![ security image](/assets/security.png)
 <br>
 <br>
 
 6. click add SSH key and paste the contents of you do-key.pub into the first box and make an easy to remember name for the second box.
+
+> [!Note]
+> To get your do-key.pub info run this command into your terminal ***change path***
+
+```bash
+Get-Content C:\Users\your-user-name\.ssh\do-key.pub | Set-Clipboard
+```
 
 <br>
 <br>
@@ -109,7 +123,7 @@
 <br>
 <br>
 
-![cloudimg qcow2 arch image](/assets/archlinuximage.png)
+<center> ![cloudimg qcow2 arch image](/assets/archlinuximage.png) </center>
 
 <br>
 <br>
@@ -120,12 +134,13 @@
 4. Go to Digital Ocean and click on the ***Manage*** button on the left-hand side, a drop down will appear, and you will select ***Backups & Snapshots***
 <br>
 <br>
-    * <img src="assets/BackupsSnapshots.png" alt="i must have made a whoopsie" height="350" width="200">
+    * <center> <img src="assets/BackupsSnapshots.png" alt="i must have made a whoopsie" height="350" width="200"> </center>
 
 5. Click ***Custom Images***
     * Click the Blue ***Upload Image*** Button
     * Select the Arch Linux Cloudimg qcow2 we downloaded previously
-     <img src="assets/Snapshotsupload.png" alt="i must have made a whoopsie" height="200" width="900">
+
+    <center> <img src="assets/Snapshotsupload.png" alt="i must have made a whoopsie" height="200" width="900"> </center>
 
      <br>
 <br>
@@ -162,7 +177,7 @@
 <br>
 <br>
 
-<img src="assets/Droplets.png" alt="manage>Droplets" >
+<center> <img src="assets/Droplets.png" alt="manage>Droplets" > </center>
 
 2. Click ***Create Droplet***
 
@@ -195,7 +210,7 @@
 
     * Under Advanced options click the ***Add Initialization scripts*** button and paste your yaml here.
 
-    <img src="assets/initscript.png" alt="advanced options" height="250" width="350">
+    <center> <img src="assets/initscript.png" alt="advanced options" height="250" width="350"> </center>
 
 <br>
     <br>
@@ -208,7 +223,7 @@
 
 4. Click Create Droplet. You should see the Droplet you just made now.
 
-<img src="assets/Createddroplet.png" alt="Proof of creation" height="250" width="700">
+<center> <img src="assets/Createddroplet.png" alt="Proof of creation" height="250" width="700"></center>
 
 <br>
     <br>
@@ -244,8 +259,10 @@ users:
     sudo: 
         ["ALL=(ALL) NOPASSWD:ALL"] # allows useage of sudo command without needing a password
     packages: # install whatever packages you may want.
-    - git
-    - neovim
+        - git
+        - neovim
+    ssh_pwauth: false # disables password authentication for ssh
+    diable_root: true # disables root login for ssh
 ```
 <br>
 <br>
@@ -256,6 +273,69 @@ users:
         * a preset ssh key
         * a chosen name by the user
         * Sudo privelages
+
+
+
+
+### <center> Logging into your Droplet </center>
+---
+---
+
+1.  Run the following command into your terminal.
+
+
+
+```bash
+ssh -i .ssh/do-key arch@your-droplets-ip-address
+# arch is your username so it may change
+# get your droplet ip from the digital ocean droplet page
+```
+
+
+2. If a password was set up you will need to enter it in
+
+---
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 #### <center> References </center>
