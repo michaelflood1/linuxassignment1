@@ -5,6 +5,13 @@
 # <center> Creating and using Arch Linux Droplets.</center>
 #### <center> By Michael Flood</center>
 
+
+## Table of Contents
+
+1. [Creating SSH keys on your local machine](#creating-ssh-keys-on-your-local-machine)
+2. [Download and upload your Operating System Image](#download-and-upload-your-operating-system-image)
+3. [Creating your first Droplet](#creating-your-first-droplet)
+4. [Creating and Using a Cloud Init File](#creating-and-using-a-cloud-init-file)
 ### Creating SSH keys on your ***local*** machine.
 ---
 > {!NOTE}
@@ -21,7 +28,7 @@
     > if you are on windows you  will need to use your full path. i.e  
     > C:\Users\your-user-name\.ssh\do-key
 
-``` 
+```bash
     ssh-keygen -t ed25519 -f ~/.ssh/do-key -C <youremail@email.com>
 ```
 3. You will be given the choice of either having a password or not.
@@ -104,7 +111,7 @@
       use the one we uploaded earlier.
     * Change your hostname to something easy to type, the project you are working on is a good choice.
     >[!IMPORTANT]
-    > If you are planning to add a cloud init Config to this droplet please complete section 4: Creating and Using a Cloud Init File first
+    > If you are planning to add a cloud init Config to this droplet please complete section 4:[Creating and Using a Cloud Init File](#creating-and-using-a-cloud-init-file) first.
 
     * Under Advanced options click the ***Add Initialization scripts*** button and paste your yaml here.
 
@@ -123,22 +130,22 @@
 1.  Using an text editor or app create a file.
     * the text we put into this file will be the instructions that our Droplet initializes with.
 2. There are many things you can do with cloud-init-config files we will be going simple.
-``` 
+```yaml 
 #cloud-config
 // Create a user ID
 users:
     - name: YourName
     groups: sudo
-    shell: /bin/bash  //default shell
+    shell: /bin/bash  # default shell
     ssh-authorized-keys: 
-        - ssh-ed25519 // enter your do-key.pub files contents
+        - ssh-ed25519 # enter your do-key.pub files contents
     sudo: 
-        ["ALL=(ALL) NOPASSWD:ALL"] // allows useage of sudo command without needing a password
-    packages: // install whatever packages you may want.
+        ["ALL=(ALL) NOPASSWD:ALL"] # allows useage of sudo command without needing a password
+    packages: # install whatever packages you may want.
     - git
     - neovim
 ```
-3. adding this data minus the // lines into the add initialization scripts option during droplet creation will make the droplet launch with.
+3. adding this data into the add initialization scripts option during droplet creation will make the droplet launch with.
     * Neo Vim and Git installed
     * a user with:<br>
         * a preset ssh key
