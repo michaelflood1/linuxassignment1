@@ -9,107 +9,168 @@
 ## <center>Table of Contents
 
 1. [Creating SSH keys on your local machine](#creating-ssh-keys-on-your-local-machine)
+
 2. [Download and upload your Operating System Image](#download-and-upload-your-operating-system-image)
+
 3. [Creating your first Droplet](#creating-your-first-droplet)
+
 4. [Creating and Using a Cloud Init File](#creating-and-using-a-cloud-init-file) 
 </center>
 
-
-
-
-
-### Creating SSH keys on your ***local*** machine.
+### <center> Creating SSH keys on your ***local*** machine.</center>
 ---
 > {!NOTE}
 > SSH keys are an authentication tool that acts as a special password, mainly used for connecting to a remote computer.
 
 ---
-
+<br>
+<br>
 
 1. create a new folder named .ssh in a directory of your choosing.
-![ if theres no image here fail me](/assets/sshfolder.png)
 
+![ if theres no image here fail me](/assets/sshfolder.png)
+<br>
+<br>
 
 2. Open up your windows terminal and input the below text, changing **~/.ssh/do-key** to your .ssh folders path. and **youremail** to your preferred email account.
-
+<br>
+<br>
 
      > [!IMPORTANT]
     > if you are on windows you  will need to use your full path. i.e  
     > C:\Users\your-user-name\.ssh\do-key
-
+<br>
+<br>
 
 ```bash
     ssh-keygen -t ed25519 -f ~/.ssh/do-key -C <youremail@email.com>
 ```
+<br>
+<br>
 
 3. You will be given the choice of either having a password or not.
     * typing ** Enter ** twice  will result in you having no password for your SSH key.
 
+<br>
+<br>
 
     * whatever you enter into the field will  become your password going forward.
 4. visit DigitalOcean and navigate to the **settings** menu which is located in the lefthand side of your screen.
+
 <img src="assets/Settings.png" alt="i must have made a whoopsy" height="300" width="300">
+
 <br>
 <br>
 
 
 5. Click the security tab at the top of your page
-
+<br>
+<br>
 
 ![ security image](/assets/security.png)
-
+<br>
+<br>
 
 6. click add SSH key and paste the contents of you do-key.pub into the first box, and make an easy to remember name for the second box.
 
+<br>
+<br>
 
     > [!TIP]
      > make the name simple, it is used later.
 
+<br>
+<br>
 
 ### <center> download and upload your Operating System Image <center>
+<br>
+<br>
+
+
 ---
+
 
 
 > [!NOTE]
 >in order to have a functional enviorenmnet to work with we need to choose and upload an image of whatever OS we want to play with. I will be demonstrating with Arch Linux.
 
 ---
+<br>
+<br>
 
 
 1. navigate to the following link.
+
     * <a href="https://gitlab.archlinux.org/archlinux/arch-boxes/-/packages" target="_blank" rel="noopener noreferrer">Arch Linux gitlab Repo</a>
+    <br>
+<br>
+
 
 
 2. Open the most **recently** published images link.
+<br>
+<br>
+
 
 3. We want to download the cloudimg qcow2 link.
+<br>
+<br>
+
+
 ![cloudimg qcow2 arch image](/assets/archlinuximage.png)
+
+<br>
+<br>
+
     * > [!NOTE]
     > we choose the cloudimg qcow2 due to the fact  that we get cloud compatibility(cloudimg), it is easy to create backups for qcow2 images, and because qcow2 is optimised for reading and writing speeds.
 
 4. Go to Digital Ocean and click on the ***Manage*** button on the left hand side, a drop down will appear and you will select ***Backups & Snapshots***
+<br>
+<br>
     * <img src="assets/BackupsSnapshots.png" alt="i must have made a whoopsy" height="350" width="200">
 
 5. Click ***Custom Images***
     * Click the Blue ***Upload Image*** Button
     * Select the Arch Linux Cloudimg qcow2 we downloaded previously
      <img src="assets/Snapshotsupload.png" alt="i must have made a whoopsy" height="200" width="900">
+
+     <br>
+<br>
+
+
 6. Image Options
     * Choose the Arch Linux Distribution
     * select the Data Center closest to you in my case it will be *San Francisco 3*
     * you should see that your upload is in progress or **Pending** This will resolve shortly.
-:
+<br>
+<br>
+
+
 ### <center> Creating your first droplet <center>
+<br>
+<br>
 
 ---
 > [!NOTE]
 > Droplets are similar to running a virtual machine on your computer with the exception that we deploy the Virtual Machine (Droplet) through DigitalOceans cloud servers negating the need for our own hardware to do any work. The Trade off is that we spend monthly amounts for our active droplets. You may have also heard them called Virtual Private Servers
 
+<br>
+<br>
+
+
 > [!IMPORTANT]
 > You pay for all services while using Digital Ocean.
+
+<br>
+<br>
+
 ---
 
 1.  Go to Digital Ocean and Click the ***Manage*** button on the left hand side, a drop down will appear click on ***Droplets***
+<br>
+<br>
+
 
 <img src="assets/Droplets.png" alt="manage>Droplets" >
 
@@ -125,35 +186,64 @@
         * Choose the Arch Linux Image we uploaded earlier
         <br>
         <br>
+
     * Choose Size:  <br>
     Base your Droplet Type off of your needs, in my case i will be running a low resource Droplet so i pick the ***Basic Plan + Regular SSD + $7/Month***
     <br>
     <br>
+
     * Authentication Method :<br>
      Choose SSH Key : <br>
       use the one we uploaded earlier.
+
     * Change your hostname to something easy to type, the project you are working on is a good choice.
+    <br>
+    <br>
+
     >[!IMPORTANT]
     > If you are planning to add a cloud init Config to this droplet please complete section 4:[Creating and Using a Cloud Init File](#creating-and-using-a-cloud-init-file) first.
+
 
     * Under Advanced options click the ***Add Initialization scripts*** button and paste your yaml here.
 
     <img src="assets/initscript.png" alt="advanced options" height="250" width="350">
 
+<br>
+    <br>
+
     > [!NOTE]
     > You can leave the rest of the settings on defaultS
+
+<br>
+<br>
+
 4. Click Create Droplet. You should see the Droplet you just made now.
+
+
 <img src="assets/Createddroplet.png" alt="Proof of creation" height="250" width="700">
 
+<br>
+    <br>
+
 ### <center> Creating and Using a Cloud Init FIle <center>
+<br>
+    <br>
+
 ---
 >[!NOTE]
 > Cloud Init is pre-installed in the Arch Linux Cloudimg images. With the help of a config file users are able to make changes to their initial server. installing specific packages or adding users etcetc.
+<br>
+<br>
 --- 
+
+
 1.  Using an text editor or app create a file.
     * the text we put into this file will be the instructions that our Droplet initializes with.
 
     ---
+<br>
+<br>
+
 2. There are many things you can do with cloud-init-config files we will be going simple.
 ```yaml 
 # cloud-config
@@ -170,6 +260,9 @@ users:
     - git
     - neovim
 ```
+<br>
+<br>
+
 3. adding this data into the add initialization scripts option during droplet creation will make the droplet launch with.
     * Neo Vim and Git installed
     * a user with:<br>
